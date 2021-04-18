@@ -11,18 +11,25 @@
   </head>
 
   <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
   <nav class="nav">
       <div class="menu">
         <div class="menu-item">
           <%= link_to 'HOME', root_path %>
         </div>
         <div class="menu-item">
+          <%= link_to 'All users', users_path %>
+        </div>        
+        <div class="menu-item">
           <%= link_to 'All Clients', clients_path %>
         </div>
+        <div class="menu-item">
+          <%= link_to 'All Sales', sales_path %>
+        </div>
+        <div>
+          <%= session_links(current_user)%>
+        </div>
       </div>
-    <%= session_links(current_user)%>  
+      
     </nav>
     <%= yield %>
   </body>
