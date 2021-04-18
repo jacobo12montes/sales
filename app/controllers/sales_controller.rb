@@ -31,7 +31,7 @@ class SalesController < ApplicationController
 
   # POST /sales or /sales.json
   def create
-    @sale = Sale.new(sale_params)
+    @sale = current_user.sales.new(sale_params)
 
     respond_to do |format|
       if @sale.save
