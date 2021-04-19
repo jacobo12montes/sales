@@ -4,11 +4,6 @@ class SalesController < ApplicationController
   # GET /sales or /sales.json
   def index
     @sales = Sale.all
-    @clients = Client.all
-    @names = []
-    @clients.each do |client|
-      @names << client.name
-    end
   end
 
   # GET /sales/1 or /sales/1.json
@@ -18,11 +13,6 @@ class SalesController < ApplicationController
   # GET /sales/new
   def new
     @sale = Sale.new
-    @clients = Client.all
-    @names = []
-    @clients.each do |client|
-      @names << client.name
-    end
   end
 
   # GET /sales/1/edit
@@ -68,15 +58,7 @@ class SalesController < ApplicationController
 
   private
 
-  def clients_names
-    @clients = Client.all
-    @clients_names = []
-    @clients.each do |client|
-      @clients_names << client.name
-    end
-    @clients_names  
-  end
-    # Use callbacks to share common setup or constraints between actions.
+  # Use callbacks to share common setup or constraints between actions.
     def set_sale
       @sale = Sale.find(params[:id])
     end
