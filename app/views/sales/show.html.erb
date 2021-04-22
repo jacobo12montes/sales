@@ -11,13 +11,13 @@
 </p>
 
 <p>
-  <strong>Value:</strong>
-  <%= @sale.value %>
+  <strong>Amount:</strong>
+  <%= @sale.amount %>
 </p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @sale.category %>
+<p id="imageprofile">
+  <strong>Image:</strong>
+  <%= image_present(@sale.picture) %>
 </p>
 
 <p>
