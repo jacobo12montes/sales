@@ -13,6 +13,7 @@ class SalesController < ApplicationController
   # GET /sales/new
   def new
     @sale = Sale.new
+    @sale.group_id = params[:group_id]
   end
 
   # GET /sales/1/edit
@@ -22,6 +23,7 @@ class SalesController < ApplicationController
   # POST /sales or /sales.json
   def create
     @sale = current_user.sales.new(sale_params)
+    @sale.group_id = params[:group_id]
 
     respond_to do |format|
       if @sale.save

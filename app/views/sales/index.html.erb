@@ -9,7 +9,8 @@
       <th>Description</th>
       <th>Date</th>
       <th>User</th>
-      <th>Amount</th>
+      <th>Group id</th>
+      <th>Amount</th>      
       <th>Image</th>
       <th colspan="3"></th>
     </tr>
@@ -22,6 +23,7 @@
         <td><%= sale.description %></td>
         <td><%= sale.date %></td>     
         <td><%= sale.user.name %></td>
+        <td><%= sale.group_id %></td>
         <td><%= sale.amount %></td>
         <td id="imageprofile"><%= image_present(sale.picture)  %></td>
         <td><%= link_to 'Show', sale %></td>
