@@ -11,27 +11,9 @@
   </head>
 
   <body>
-  <nav class="nav">
-      <div class="menu">
-        <div class="menu-item">
-          <%= link_to 'HOME', root_path %>
-        </div>
-        <div class="menu-item">
-          <%= link_to 'All users', users_path %>
-        </div>        
-        <div class="menu-item">
-          <%= link_to 'All Sales', sales_path %>
-        </div>
-        <div class="menu-item">
-          <%= link_to 'All Groups', groups_path %>
-        </div>
-
-        <div>
-          <%= session_links(current_user)%>
-        </div>
-      </div>
-      
-    </nav>
+  <div class="home-item">
+        <%= link_to 'HOME', root_path %>
+  </div>
     <%= yield %>
   </body>
 </html>

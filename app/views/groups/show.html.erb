@@ -3,6 +3,7 @@
 <p>
   <strong>Name:</strong>
   <%= @group.name %>
+  
 </p>
 
 <p id="imageprofile">
@@ -10,8 +11,44 @@
   <%= image_present(@group.icon)  %>
 </p>
 
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Date</th>
+      <th>User</th>
+      <th>Group id</th>
+      <th>Amount</th>      
+      <th>Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @group.sales.each do |sale| %>
+      <tr>
+        <td><%= sale.title %></td>
+        <td><%= sale.description %></td>
+        <td><%= sale.date %></td>     
+        <td><%= sale.user.name %></td>
+        <td><%= sale.group_id %></td>
+        <td><%= sale.amount %></td>
+        <td id="imageprofile"><%= image_present(sale.picture)  %></td>
+        <td><%= link_to 'Show', sale %></td>
+        <td><%= link_to 'Edit', edit_sale_path(sale) %></td>
+        <td><%= link_to 'Destroy', sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
 <%= link_to 'Edit', edit_group_path(@group) %> |
 <%= link_to 'Back', groups_path %>
+
+<%= link_to 'New Sale', new_sale_path(@group) %>
 
 
     <%= form_for(@group.sales.new, url: group_sales_path(@group)) do |form| %>

@@ -1,13 +1,21 @@
-<h1>All Users</h1>
 <section class='users-section'>
-  <ul class='users-list'>
-    <% @users.each do |user| %>
-      <li>
-        Name: <%= user.name %>
-        <span class='profile-link'>
-          <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
-        </span>
-      </li>
-    <% end %>
-  </ul>
+  <article class="mainmenu">
+    <div class="menu">
+      <div class="menu-item">
+        <%= link_to 'See Profile',  user_path(current_user), class: 'profile-link' %>
+      </div>
+      <div class="menu-item">
+        <%= link_to 'All Sales', sales_path %>
+      </div>        
+      <div class="menu-item">
+        <%= link_to 'All my external transaccions ', external_path %>
+      </div>        
+      <div class="menu-item">
+        <%= link_to 'All Groups', groups_path %>
+      </div>
+      <div class="menu-item">
+        <%= session_links(current_user)%>
+      </div>
+    </div>  
+  </article>
 </section>

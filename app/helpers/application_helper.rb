@@ -8,9 +8,25 @@ module ApplicationHelper
         link_to 'Log in', user_session_path
       end
   end
+
+  def group_present(item)
+    unless  item.group_id.nil?
+      item.group.name
+    end
+  end
+
   def image_present(image)
     if image.present?
       image_tag image
     end   
-  end  
+  end
+  
+  # def show_icon(groups,sale)
+  #   groups.each do |group|
+  #     if sale == group.id
+  #       group.icon
+  #     end   
+  #   end
+  # end    
+
 end

@@ -3,9 +3,13 @@ class SalesController < ApplicationController
 
   # GET /sales or /sales.json
   def index
-    @sales = Sale.all
+    @sales = Sale.all.ordered_by_most_recent
+    @groups = Group.all
   end
 
+  def external
+    @sales = Sale.all.ordered_by_group.ordered_by_most_recent
+  end
   # GET /sales/1 or /sales/1.json
   def show
   end
@@ -67,6 +71,6 @@ class SalesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def sale_params
-      params.require(:sale).permit(:title, :description, :amount, :date, :picture)
+      params.require(:sale).permit(:title, :description, :amount, :date, :picture, :group_id)
     end
 end

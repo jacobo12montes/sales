@@ -7,6 +7,5 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @sales = @user.sales.ordered_by_most_recent
   end
 end
