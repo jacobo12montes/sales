@@ -27,3 +27,4 @@
 
 <%= link_to 'Edit', edit_sale_path(@sale) %> |
 <%= link_to 'Back', sales_path %>
+<%= link_to 'Destroy', @sale, method: :delete, data: { confirm: 'Are you sure?' } %>

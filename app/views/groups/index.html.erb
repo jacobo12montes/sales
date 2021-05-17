@@ -1,31 +1,30 @@
-<p id="notice"><%= notice %></p>
+<div class='subtitle'>
+  <p>Groups</p>
+</div>
 
-<h1>Groups</h1>
+<div class='goals'>
+  <p>
+   Add a new sale  from the inside of a group! 
+  </p>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Icon</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @groups.each do |group| %>
-      <tr>
-        <td><%= group.name %></td>
-        <td id="imageprofile"><%= image_present(group.icon)%></td>
-        <td><%= group.user.name %></td>
-        <td><%= group.created_at.to_formatted_s(:long)%></td>
-        <td><%= link_to 'Show', group %></td>
-        <td><%= link_to 'Edit', edit_group_path(group) %></td>
-        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class='sales'>
+  <% @groups.each do |group| %>
+      <div class='sales-container'>
+        <%# <div class='sales-item sales1' id="imageprofile"><%= image_present(group.icon)</div> %>
+        <%= link_to image_present(group.icon), group, class: "sales-item sales1", id: "imageprofile" %>
+        <div class='sales-item sales2' >
+          <%= link_to group.name, group %>
+          <%= group.created_at.to_formatted_s(:long) %>
+        </div>   
+        <div class='sales-item sales3'><%= group.sales.count %></div>
+      </div>
+  <% end %>
+</div>
 
-<br>
-
-<%= link_to 'New Group', new_group_path %>
+<div class='newsale discenter'>
+  <div class='newsaleitem discenter'>
+    <%= link_to 'New Group', new_group_path %>
+  </div>
+</div>

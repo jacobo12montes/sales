@@ -3,12 +3,12 @@ class SalesController < ApplicationController
 
   # GET /sales or /sales.json
   def index
-    @sales = Sale.all.ordered_by_most_recent
+    @sales = Sale.all.ordered_by_most_recent.where(user_id: current_user)
     @groups = Group.all
   end
 
   def external
-    @sales = Sale.all.ordered_by_group.ordered_by_most_recent
+    @sales = Sale.all.ordered_by_group.ordered_by_most_recent.where(user_id: current_user)
   end
   # GET /sales/1 or /sales/1.json
   def show

@@ -26,6 +26,7 @@
   </thead>
 
   <tbody>
+    <%= @group.created_at.to_formatted_s(:long)%>
     <% @group.sales.each do |sale| %>
       <tr>
         <td><%= sale.title %></td>

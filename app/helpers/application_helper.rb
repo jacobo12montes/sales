@@ -1,11 +1,11 @@
 module ApplicationHelper
   def session_links(current_user)
       if current_user
-        link_to 'Sign Out', destroy_user_session_path, method: :delete
+        link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "menulinks"
       elsif !current_user && controller_name == 'sessions'
-        link_to 'Sign up', new_user_registration_path
+        link_to 'Sign up', new_user_registration_path, class: "menulinks"
       else
-        link_to 'Log in', user_session_path
+        link_to 'Log in', user_session_path, class: "menulinks"
       end
   end
 
@@ -20,13 +20,11 @@ module ApplicationHelper
       image_tag image
     end   
   end
-  
-  # def show_icon(groups,sale)
-  #   groups.each do |group|
-  #     if sale == group.id
-  #       group.icon
-  #     end   
-  #   end
-  # end    
+
+  def user_sales(current_user, sale)
+     if current_user.id == sale.user_id
+       sale
+     end  
+  end
 
 end
