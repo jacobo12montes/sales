@@ -11,7 +11,6 @@
 </div>
 <div class='sales'>
   <% @sales.each do |sale| %>
-    <%# <% if current_user.id == sale.user_id%>
       <div class='sales-container'>
         <div class='sales-item sales1' id="imageprofile"><%= image_present(sale.picture)  %></div>      
         <div class='sales-item sales2' >
@@ -20,7 +19,6 @@
         </div>   
         <div class='sales-item sales3'><%= sale.amount %></div>
       </div>
-    <%# <% end %>
   <% end %>
 </div> 
 <div class='newsale discenter'>

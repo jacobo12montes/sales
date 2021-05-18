@@ -10,17 +10,25 @@
       </ul>
     </div>
   <% end %>
+<div class="sales">
 
-  <div class="field">
+  <div class="field discenter">
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
-  <div class="field">
+
+  <div class="field discenter">
     <%= form.label :icon %>
-    <%= form.file_field :icon %>
+    <div class="fieldpicturesale">
+      <%= form.file_field :icon %>
+    </div>  
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+</div>
+
+  <div class='newsale discenter'>
+    <div class="actions newsaleitem discenter">
+      <%= form.submit %>
+    </div>
   </div>
 <% end %>

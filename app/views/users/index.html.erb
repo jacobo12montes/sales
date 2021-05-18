@@ -1,7 +1,7 @@
 <section class='users-section'>
   <article class='profile-picture'>
-    <%= link_to image_tag("profile-pic.png", alt: "profile-pic", class: "profile-pic" ), user_path(current_user)%>
-    <h2 class='username-tag'><%=link_to "#{current_user.name}", user_path(current_user) %></h2>
+    <%= link_to image_tag("profile-pic.png", alt: "profile-pic", class: "profile-pic" )%>
+    <h2 class='username-tag'><%=link_to "#{current_user.name}" %></h2>
   </article>
   <article class="mainmenu">    
     <div class="menu-item">

@@ -1,6 +1,7 @@
+
 <%= form_with(model: sale) do |form| %>
   <% if sale.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation discenter">
       <h2><%= pluralize(sale.errors.count, "error") %> prohibited this sale from being saved:</h2>
 
       <ul>
@@ -10,33 +11,40 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
+<div class="sales">
+  <div class="field discenter">
     <%= form.label :Client %>
     <%= form.text_field :title %>
   </div>
 
-  <div class="field">
-    <%= form.label :picture %><br />
-    <%= form.file_field :picture %>
+  <div class="field discenter">
+    <%= form.label :date %>
+    <div>
+      <%= form.date_select :date %>
+    </div>
   </div>
 
-  <div class="field">
+  <div class="field discenter">
     <%= form.label :description %>
     <%= form.text_field :description %>
   </div>
 
-  <div class="field">
+  <div class="field discenter">
     <%= form.label :amount %>
     <%= form.number_field :amount %>
   </div>
 
-  <div class="field">
-    <%= form.label :date %>
-    <%= form.date_select :date %>
+  <div class="field discenter">
+      <%= form.label :picture %><br />
+    <div class="fieldpicturesale">  
+      <%= form.file_field :picture %>
+    </div>  
+  </div>
+</div>
+  <div class='newsale discenter'>
+    <div class='actions newsaleitem discenter'>
+      <%= form.submit 'Create Sale' %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= form.submit 'Create Sale' %>
-  </div>
 <% end %>

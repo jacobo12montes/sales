@@ -35,7 +35,7 @@ body {
   font-size: 1.1rem;
   font-family: 'Open Sans Condensed', sans-serif;
   max-width: 400px;
-  min-width: 400px;
+  min-width: 360px;
 }
 
 .discenter {
@@ -70,7 +70,6 @@ table {
 	border-spacing: 0;
 }
 
-
 pre {
   background-color: #eee;
   padding: 10px;
@@ -81,22 +80,9 @@ a {
   text-decoration: none;
  }
 
-// a:visited {
-//   color: #666; }
-
 a:hover {
   color: #fff;
   background-color: #5fb523; }
-
-th {
-  padding-bottom: 5px; }
-
-td {
-  padding: 0 5px 7px; }
-
-div.field,
-div.actions {
-  margin-bottom: 10px; }
 
 #notice {
   color: #5fb523; }
@@ -140,10 +126,6 @@ div.actions {
 
 label {
   display: block; }
-
-.mainmenu {
-  width: 400px;
-}  
 
 .menu-item,
 .home-item,
@@ -279,4 +261,28 @@ label {
   border-width: 1px;
   border-style: solid ;
   border-color: #fff;
+}
+
+.field {
+  width: 100%;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+#sale_picture {
+  width: 100%;
+}
+
+.fieldpicturesale {
+  width: 50%;
+}
+.actions input {
+  color: #FFF;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.backlink {
+  margin-top: 1 rem;
 }
