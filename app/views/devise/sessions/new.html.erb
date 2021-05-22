@@ -1,0 +1,28 @@
+<div class='subtitle'>
+  <p>Sign In</p>
+</div>
+
+<%= render "devise/shared/error_messages", resource: resource %>
+
+<div class='sign discenter'>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="field discenter">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <div class="field discenter">
+        <%= f.label :password %><br />
+        <%= f.password_field :password, autocomplete: "current-password" %>
+    </div>
+
+    <div class='newsale discenter loginbutton'>
+        <div class='actions newsaleitem discenter'>
+        <%= f.submit 'Log in' %>
+        </div>
+    </div>
+  <% end %>
+</div>    
+<div class='discenter backlink'>
+    <%= render "devise/shared/links" %>
+</div>

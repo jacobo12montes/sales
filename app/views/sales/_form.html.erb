@@ -14,7 +14,7 @@
 <div class="sales">
   <div class="field discenter">
     <%= form.label :Client %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, placeholder: 'Add new Client' %>
   </div>
 
   <div class="field discenter">
@@ -26,18 +26,18 @@
 
   <div class="field discenter">
     <%= form.label :description %>
-    <%= form.text_field :description %>
+    <%= form.text_field :description, placeholder: 'Add a Description' %>
   </div>
 
   <div class="field discenter">
     <%= form.label :amount %>
-    <%= form.number_field :amount %>
+    <%= form.number_field :amount, placeholder: 'Add the Amount' %>
   </div>
 
   <div class="field discenter">
       <%= form.label :picture %><br />
     <div class="fieldpicturesale">  
-      <%= form.file_field :picture %>
+      <%= form.file_field :picture, placeholder: 'Add an Image' %>
     </div>  
   </div>
 </div>

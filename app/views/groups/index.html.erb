@@ -12,7 +12,6 @@
 <div class='sales'>
   <% @groups.each do |group| %>
       <div class='sales-container'>
-        <%# <div class='sales-item sales1' id="imageprofile"><%= image_present(group.icon)</div> %>
         <%= link_to image_present(group.icon), group, class: "sales-item sales1", id: "imageprofile" %>
         <div class='sales-item sales2' >
           <%= link_to group.name, group %>

@@ -1,30 +1,42 @@
-<p id="notice"><%= notice %></p>
+<div class='subtitle'>
+  <p>Sales</p>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @sale.title %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @sale.description %>
-</p>
+<div class='goals'>
+  <div class='goalsitem1'>
+    Total amount
+  </div> 
+  <div class='goalsitem2'>
+     $<%= @sale.amount %>
+  </div>  
+</div>
 
-<p>
-  <strong>Amount:</strong>
-  <%= @sale.amount %>
-</p>
+<div class='sales'>
+  <div class='sale-container discenter saleshow'>
+    <p>
+      <%= @sale.title %>
+    </p>
+  </div>    
+  <div class='sale-container discenter saleshow'>
+    <p class="uniqueimageprofile">
+      <%= image_present(@sale.picture) %>
+    </p>
+  </div>
+  <div class='sale-container discenter saleshow'>
+    <p>
+      <%= @sale.description %>
+    </p>
+  </div>  
+  <div class='sale-container discenter saleshow'>
+    <p>
+      <%= @sale.date %>
+    </p>
+  </div>  
+</div>
 
-<p id="imageprofile">
-  <strong>Image:</strong>
-  <%= image_present(@sale.picture) %>
-</p>
-
-<p>
-  <strong>Date:</strong>
-  <%= @sale.date %>
-</p>
-
-<%= link_to 'Edit', edit_sale_path(@sale) %> |
-<%= link_to 'Back', sales_path %>
-<%= link_to 'Destroy', @sale, method: :delete, data: { confirm: 'Are you sure?' } %>
+<div class='discenter backlink'>
+  <%= link_to 'Edit', edit_sale_path(@sale) %> |
+  <%= link_to 'Back', sales_path %> |
+  <%= link_to 'Destroy', @sale, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>

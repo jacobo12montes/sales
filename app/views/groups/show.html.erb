@@ -1,62 +1,77 @@
-<p id="notice"><%= notice %></p>
+<div class='subtitle'>
+  <p><%=@group.name %></p>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @group.name %>
+<div class='goals'>
   
-</p>
-
-<p id="imageprofile">
-  <strong>Icon:</strong>
-  <%= image_present(@group.icon)  %>
-</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Date</th>
-      <th>User</th>
-      <th>Group id</th>
-      <th>Amount</th>      
-      <th>Image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <%= @group.created_at.to_formatted_s(:long)%>
-    <% @group.sales.each do |sale| %>
-      <tr>
-        <td><%= sale.title %></td>
-        <td><%= sale.description %></td>
-        <td><%= sale.date %></td>     
-        <td><%= sale.user.name %></td>
-        <td><%= sale.group_id %></td>
-        <td><%= sale.amount %></td>
-        <td id="imageprofile"><%= image_present(sale.picture)  %></td>
-        <td><%= link_to 'Show', sale %></td>
-        <td><%= link_to 'Edit', edit_sale_path(sale) %></td>
-        <td><%= link_to 'Destroy', sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div class='goalsitem1 groupshowimage'>
+    <%= @group.user.name%>
+    <%= image_present(@group.icon)  %>
+  </div> 
+  <div class='goalsitem2'>
+    <%= @group.sales.count %>
+  </div>
+</div>
 
 
 
-<%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'Back', groups_path %>
+<div class='sales'>
+  <% @group.sales.each do |sale| %>
+      <div class='sales-container'>
+        <div class='sales-item sales1' id="imageprofile"><%= image_present(sale.picture)  %></div>      
+        <div class='sales-item sales2' >
+          <%= link_to sale.title, sale %>
+          <%= sale.date %>
+        </div>   
+        <div class='sales-item sales3'><%= sale.amount %></div>
+      </div>
+  <% end %>
+</div>
 
-<%= link_to 'New Sale', new_sale_path(@group) %>
+<div class='subtitle'>
+  <p>Add a Sale</p>
+</div>
 
+<%= form_for(@group.sales.new, url: group_sales_path(@group)) do |form| %>
+  <div class="sales">  
+    <div class="field discenter">
+      <%= form.label :Client %>
+      <%= form.text_field :title, placeholder: 'Add new Client' %>
+    </div>
 
-    <%= form_for(@group.sales.new, url: group_sales_path(@group)) do |form| %>
-      <%= form.text_field :title, placeholder: 'Add new Title' %>
-      <%= form.file_field :picture, placeholder: 'Add new Image' %>
-      <%= form.text_field :description, placeholder: 'Add new Description' %>     
-      <%= form.number_field :amount, placeholder: 'Add new Amount' %>
-      <%= form.date_select :date, placeholder: 'Add new Title' %>
-      <%= form.submit 'Create saleeeee'%>
-    <% end %>
+    <div class="field discenter">
+      <%= form.label :date %>
+      <div>
+        <%= form.date_select :date %>
+      </div>
+    </div>
+
+    <div class="field discenter">
+      <%= form.label :description %>
+      <%= form.text_field :description, placeholder: 'Add a Description' %>
+    </div>
+
+    <div class="field discenter">
+      <%= form.label :amount %>
+      <%= form.number_field :amount, placeholder: 'Add the Amount' %>
+    </div>
+
+    <div class="field discenter">
+        <%= form.label :picture %><br />
+      <div class="fieldpicturesale">  
+        <%= form.file_field :picture, placeholder: 'Add an Image' %>
+      </div>  
+    </div>
+  </div>
+  <div class='newsale discenter'>
+    <div class='actions newsaleitem discenter'>
+      <%= form.submit 'Create Sale' %>
+    </div>
+  </div>
+<% end %>
+
+<div class='discenter backlink'>
+  <%= link_to 'Edit', edit_group_path(@group) %> |
+  <%= link_to 'Back', groups_path %>
+  <%= link_to 'Destroy', @group, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>

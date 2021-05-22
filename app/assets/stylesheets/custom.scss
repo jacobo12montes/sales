@@ -88,8 +88,8 @@ a:hover {
   color: #5fb523; }
 
 #imageprofile > * {
-  width: 90%;
-  height: 100%;
+  width: 5rem;
+  height: 5rem;
 }
 
 .profile-pic {
@@ -101,12 +101,12 @@ a:hover {
 
 .field_with_errors {
   padding: 2px;
-  background-color: red;
+  background-color: #33ff00;
   display: table; }
 
 #error_explanation {
-  width: 450px;
-  border: 2px solid red;
+  width: 70%;
+  border: 2px solid #33ff00;
   padding: 7px 7px 0;
   margin-bottom: 20px;
   background-color: #f0f0f0; }
@@ -117,15 +117,17 @@ a:hover {
   padding: 5px 5px 5px 15px;
   font-size: 12px;
   margin: -7px -7px 0;
-  background-color: #c00;
+  background-color:#33ff00;
   color: #fff; }
 
 #error_explanation ul li {
-  font-size: 12px;
-  list-style: square; }
+  font-size: 12px; 
+}
 
 label {
-  display: block; }
+  display: block; 
+  padding: 3px;
+}
 
 .menu-item,
 .home-item,
@@ -285,4 +287,34 @@ label {
 
 .backlink {
   margin-top: 1 rem;
+}
+
+.uniqueimageprofile > * {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+}
+
+.saleshow{
+  margin-bottom: 1.5rem;
+}
+
+.groupshowimage img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+
+.sign {
+  background-color: #EFF1F0 ;
+  height: 24em;
+  width: 100%;
+}
+
+.sign form {
+  width: 100%;
+}
+
+.errorscontainer {
+  width: 100%;
 }
