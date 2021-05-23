@@ -1,5 +1,5 @@
 class SalesController < ApplicationController
-  before_action :set_sale, only: %i[ show edit update destroy ]
+  before_action :set_sale, only: %i[show edit update destroy]
 
   # GET /sales or /sales.json
   def index
@@ -10,9 +10,9 @@ class SalesController < ApplicationController
   def external
     @sales = Sale.all.ordered_by_group.ordered_by_most_recent.where(user_id: current_user)
   end
+
   # GET /sales/1 or /sales/1.json
-  def show
-  end
+  def show; end
 
   # GET /sales/new
   def new
@@ -21,8 +21,7 @@ class SalesController < ApplicationController
   end
 
   # GET /sales/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /sales or /sales.json
   def create
@@ -31,7 +30,7 @@ class SalesController < ApplicationController
 
     respond_to do |format|
       if @sale.save
-        format.html { redirect_to @sale, notice: "Sale was successfully created." }
+        format.html { redirect_to @sale, notice: 'Sale was successfully created.' }
         format.json { render :show, status: :created, location: @sale }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -44,7 +43,7 @@ class SalesController < ApplicationController
   def update
     respond_to do |format|
       if @sale.update(sale_params)
-        format.html { redirect_to @sale, notice: "Sale was successfully updated." }
+        format.html { redirect_to @sale, notice: 'Sale was successfully updated.' }
         format.json { render :show, status: :ok, location: @sale }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -57,7 +56,7 @@ class SalesController < ApplicationController
   def destroy
     @sale.destroy
     respond_to do |format|
-      format.html { redirect_to sales_url, notice: "Sale was successfully destroyed." }
+      format.html { redirect_to sales_url, notice: 'Sale was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -65,12 +64,12 @@ class SalesController < ApplicationController
   private
 
   # Use callbacks to share common setup or constraints between actions.
-    def set_sale
-      @sale = Sale.find(params[:id])
-    end
+  def set_sale
+    @sale = Sale.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def sale_params
-      params.require(:sale).permit(:title, :description, :amount, :date, :picture, :group_id)
-    end
+  # Only allow a list of trusted parameters through.
+  def sale_params
+    params.require(:sale).permit(:title, :description, :amount, :date, :picture, :group_id)
+  end
 end
