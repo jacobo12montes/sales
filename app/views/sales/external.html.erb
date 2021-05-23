@@ -1,0 +1,30 @@
+<div class='subtitle'>
+  <p>External</p>
+</div>
+<div class='goals'>
+  <div class='goalsitem1'>
+    Total amount
+  </div> 
+  <div class='goalsitem2'>
+     $<%= goals(@sales) %>
+  </div>  
+</div>
+<div class='sales'>
+  <% @sales.each do |sale| %>
+    <%# <% if current_user.id == sale.user_id%>
+      <div class='sales-container'>
+        <div class='sales-item sales1' id="imageprofile"><%= image_present(sale.picture)  %></div>      
+        <div class='sales-item sales2' >
+          <%= link_to sale.title, sale %>
+          <%= sale.date %>
+        </div>   
+        <div class='sales-item sales3'><%= sale.amount %></div>
+      </div>
+    <%# <% end %>
+  <% end %>
+</div> 
+<div class='newsale discenter'>
+  <div class='newsaleitem discenter'>
+    <%= link_to 'New Sale', new_sale_path %>
+  </div>
+</div>

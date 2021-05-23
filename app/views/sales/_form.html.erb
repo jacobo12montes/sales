@@ -1,0 +1,50 @@
+
+<%= form_with(model: sale) do |form| %>
+  <% if sale.errors.any? %>
+    <div id="error_explanation discenter">
+      <h2><%= pluralize(sale.errors.count, "error") %> prohibited this sale from being saved:</h2>
+
+      <ul>
+        <% sale.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="sales">
+  <div class="field discenter">
+    <%= form.label :Client %>
+    <%= form.text_field :title, placeholder: 'Add new Client' %>
+  </div>
+
+  <div class="field discenter">
+    <%= form.label :date %>
+    <div>
+      <%= form.date_select :date %>
+    </div>
+  </div>
+
+  <div class="field discenter">
+    <%= form.label :description %>
+    <%= form.text_field :description, placeholder: 'Add a Description' %>
+  </div>
+
+  <div class="field discenter">
+    <%= form.label :amount %>
+    <%= form.number_field :amount, placeholder: 'Add the Amount' %>
+  </div>
+
+  <div class="field discenter">
+      <%= form.label :picture %><br />
+    <div class="fieldpicturesale">  
+      <%= form.file_field :picture, placeholder: 'Add an Image' %>
+    </div>  
+  </div>
+</div>
+  <div class='newsale discenter'>
+    <div class='actions newsaleitem discenter'>
+      <%= form.submit 'Create Sale' %>
+    </div>
+  </div>
+
+<% end %>

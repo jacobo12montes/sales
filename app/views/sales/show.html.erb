@@ -1,0 +1,42 @@
+<div class='subtitle'>
+  <p>Sales</p>
+</div>
+
+
+<div class='goals'>
+  <div class='goalsitem1'>
+    Total amount
+  </div> 
+  <div class='goalsitem2'>
+     $<%= @sale.amount %>
+  </div>  
+</div>
+
+<div class='sales'>
+  <div class='sale-container discenter saleshow'>
+    <p>
+      <%= @sale.title %>
+    </p>
+  </div>    
+  <div class='sale-container discenter saleshow'>
+    <p class="uniqueimageprofile">
+      <%= image_present(@sale.picture) %>
+    </p>
+  </div>
+  <div class='sale-container discenter saleshow'>
+    <p>
+      <%= @sale.description %>
+    </p>
+  </div>  
+  <div class='sale-container discenter saleshow'>
+    <p>
+      <%= @sale.date %>
+    </p>
+  </div>  
+</div>
+
+<div class='discenter backlink'>
+  <%= link_to 'Edit', edit_sale_path(@sale) %> |
+  <%= link_to 'Back', sales_path %> |
+  <%= link_to 'Destroy', @sale, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>

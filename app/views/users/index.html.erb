@@ -1,0 +1,20 @@
+<section class='users-section'>
+  <article class='profile-picture'>
+    <%= link_to image_tag("profile-pic.png", alt: "profile-pic", class: "profile-pic" )%>
+    <h2 class='username-tag'><%=link_to "#{current_user.name}" %></h2>
+  </article>
+  <article class="mainmenu">    
+    <div class="menu-item">
+      <%= link_to 'ALL SALES', sales_path, class: "menulinks" %>
+    </div>        
+    <div class="menu-item">
+      <%= link_to 'EXTERNAL ', external_path, class: "menulinks" %>
+    </div>        
+    <div class="menu-item">
+      <%= link_to 'GROUPS', groups_path, class: "menulinks" %>
+    </div>
+    <div class="menu-item">
+      <%= session_links(current_user)%>
+    </div>
+  </article>
+</section>

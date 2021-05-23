@@ -1,0 +1,77 @@
+<div class='subtitle'>
+  <p><%=@group.name %></p>
+</div>
+
+<div class='goals'>
+  
+  <div class='goalsitem1 groupshowimage'>
+    <%= @group.user.name%>
+    <%= image_present(@group.icon)  %>
+  </div> 
+  <div class='goalsitem2'>
+    <%= @group.sales.count %>
+  </div>
+</div>
+
+
+
+<div class='sales'>
+  <% @group.sales.each do |sale| %>
+      <div class='sales-container'>
+        <div class='sales-item sales1' id="imageprofile"><%= image_present(sale.picture)  %></div>      
+        <div class='sales-item sales2' >
+          <%= link_to sale.title, sale %>
+          <%= sale.date %>
+        </div>   
+        <div class='sales-item sales3'><%= sale.amount %></div>
+      </div>
+  <% end %>
+</div>
+
+<div class='subtitle'>
+  <p>Add a Sale</p>
+</div>
+
+<%= form_for(@group.sales.new, url: group_sales_path(@group)) do |form| %>
+  <div class="sales">  
+    <div class="field discenter">
+      <%= form.label :Client %>
+      <%= form.text_field :title, placeholder: 'Add new Client' %>
+    </div>
+
+    <div class="field discenter">
+      <%= form.label :date %>
+      <div>
+        <%= form.date_select :date %>
+      </div>
+    </div>
+
+    <div class="field discenter">
+      <%= form.label :description %>
+      <%= form.text_field :description, placeholder: 'Add a Description' %>
+    </div>
+
+    <div class="field discenter">
+      <%= form.label :amount %>
+      <%= form.number_field :amount, placeholder: 'Add the Amount' %>
+    </div>
+
+    <div class="field discenter">
+        <%= form.label :picture %><br />
+      <div class="fieldpicturesale">  
+        <%= form.file_field :picture, placeholder: 'Add an Image' %>
+      </div>  
+    </div>
+  </div>
+  <div class='newsale discenter'>
+    <div class='actions newsaleitem discenter'>
+      <%= form.submit 'Create Sale' %>
+    </div>
+  </div>
+<% end %>
+
+<div class='discenter backlink'>
+  <%= link_to 'Edit', edit_group_path(@group) %> |
+  <%= link_to 'Back', groups_path %>
+  <%= link_to 'Destroy', @group, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
