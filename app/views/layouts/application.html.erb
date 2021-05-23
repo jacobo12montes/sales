@@ -11,26 +11,15 @@
   </head>
 
   <body>
-  <nav class="nav">
-      <div class="menu">
-        <div class="menu-item">
-          <%= link_to 'HOME', root_path %>
-        </div>
-        <div class="menu-item">
-          <%= link_to 'All users', users_path %>
-        </div>        
-        <div class="menu-item">
-          <%= link_to 'All Clients', clients_path %>
-        </div>
-        <div class="menu-item">
-          <%= link_to 'All Sales', sales_path %>
-        </div>
-        <div>
-          <%= session_links(current_user)%>
-        </div>
-      </div>
-      
-    </nav>
+  <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
+  <div class="home-item">
+        <%= link_to 'TRANSACTIONS', root_path, class: "menulinks" %>
+  </div>
     <%= yield %>
   </body>
 </html>

@@ -2,10 +2,6 @@
 
 one:
   name: MyString
-  city: MyString
-  manager: MyString
 
 two:
   name: MyString
-  city: MyString
-  manager: MyString

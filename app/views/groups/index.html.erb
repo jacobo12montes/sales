@@ -1,0 +1,29 @@
+<div class='subtitle'>
+  <p>Groups</p>
+</div>
+
+<div class='goals'>
+  <p>
+   Add a new sale  from the inside of a group! 
+  </p>
+</div>
+
+
+<div class='sales'>
+  <% @groups.each do |group| %>
+      <div class='sales-container'>
+        <%= link_to image_present(group.icon), group, class: "sales-item sales1", id: "imageprofile" %>
+        <div class='sales-item sales2' >
+          <%= link_to group.name, group %>
+          <%= group.created_at.to_formatted_s(:long) %>
+        </div>   
+        <div class='sales-item sales3'><%= group.sales.count %></div>
+      </div>
+  <% end %>
+</div>
+
+<div class='newsale discenter'>
+  <div class='newsaleitem discenter'>
+    <%= link_to 'New Group', new_group_path %>
+  </div>
+</div>
