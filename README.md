@@ -9,7 +9,7 @@
 
 ## Live Demo
 
-
+https://ancient-inlet-43812.herokuapp.com/sales
 
 
 ## Getting Started
