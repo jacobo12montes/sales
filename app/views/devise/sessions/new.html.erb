@@ -5,6 +5,7 @@
 <%= render "devise/shared/error_messages", resource: resource %>
 
 <div class='sign discenter'>
+
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field discenter">
         <%= f.label :email %><br />

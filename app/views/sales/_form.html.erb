@@ -1,7 +1,6 @@
-
 <%= form_with(model: sale) do |form| %>
   <% if sale.errors.any? %>
-    <div id="error_explanation discenter">
+    <div id="error_explanation">
       <h2><%= pluralize(sale.errors.count, "error") %> prohibited this sale from being saved:</h2>
 
       <ul>
