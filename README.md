@@ -24,7 +24,7 @@ Postgres: >=9.5
 
 ### Setup
 
-Instal gems with:
+Install gems with:
 
 ```
 bundle install
@@ -60,7 +60,7 @@ Open `http://localhost:3000/` in your browser.
 ### Run tests
 
 ```
-    rpsec --format documentation
+    RSpec --format documentation
 ```
 
 ### Deployment
@@ -78,7 +78,7 @@ Heroku
 ## 🤝 Contributing
 
 
-Contributions, issues and feature requests are welcome!
+Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](issues/).
 
@@ -92,7 +92,7 @@ The Creative Commons license of the design
 
 ## 📝 License
 
-You can access all the design info (color, typography, layouts) in this link:
+You can access all the design info (color, typography, layouts) at this link:
 
 [https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=)
 
