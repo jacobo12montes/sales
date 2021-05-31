@@ -28,47 +28,6 @@
   <% end %>
 </div>
 
-<div class='subtitle'>
-  <p>Add a Sale</p>
-</div>
-
-<%= form_for(@group.sales.new, url: group_sales_path(@group)) do |form| %>
-  <div class="sales">  
-    <div class="field discenter">
-      <%= form.label :Client %>
-      <%= form.text_field :title, placeholder: 'Add new Client' %>
-    </div>
-
-    <div class="field discenter">
-      <%= form.label :date %>
-      <div>
-        <%= form.date_select :date %>
-      </div>
-    </div>
-
-    <div class="field discenter">
-      <%= form.label :description %>
-      <%= form.text_field :description, placeholder: 'Add a Description' %>
-    </div>
-
-    <div class="field discenter">
-      <%= form.label :amount %>
-      <%= form.number_field :amount, placeholder: 'Add the Amount' %>
-    </div>
-
-    <div class="field discenter">
-        <%= form.label :picture %><br />
-      <div class="fieldpicturesale">  
-        <%= form.file_field :picture, placeholder: 'Add an Image' %>
-      </div>  
-    </div>
-  </div>
-  <div class='newsale discenter'>
-    <div class='actions newsaleitem discenter'>
-      <%= form.submit 'Create Sale' %>
-    </div>
-  </div>
-<% end %>
 
 <div class='discenter backlink'>
   <%= link_to 'Edit', edit_group_path(@group) %> |

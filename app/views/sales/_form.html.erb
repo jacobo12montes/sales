@@ -39,6 +39,12 @@
       <%= form.file_field :picture, placeholder: 'Add an Image' %>
     </div>  
   </div>
+
+  <div class="field discenter">
+    <%= form.label :group %>
+    <%= form.select :group, @groups %>
+  </div>
+
 </div>
   <div class='newsale discenter'>
     <div class='actions newsaleitem discenter'>
