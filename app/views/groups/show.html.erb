@@ -9,14 +9,14 @@
     <%= image_present(@group.icon)  %>
   </div> 
   <div class='goalsitem2'>
-    <%= @group.sales.count %>
+    <%= @group.groupsales.count %>
   </div>
 </div>
 
 
 
 <div class='sales'>
-  <% @group.sales.each do |sale| %>
+  <% @sales.each do |sale| %>
       <div class='sales-container'>
         <div class='sales-item sales1' id="imageprofile"><%= image_present(sale.picture)  %></div>      
         <div class='sales-item sales2' >

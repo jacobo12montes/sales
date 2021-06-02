@@ -22,7 +22,9 @@ class SalesController < ApplicationController
   end
 
   # GET /sales/1/edit
-  def edit; end
+  def edit
+    @groups = Group.select_options
+  end
 
   # POST /sales or /sales.json
   def create
