@@ -5,10 +5,12 @@ class SalesController < ApplicationController
   def index
     @sales = Sale.ordered_by_most_recent.where(user_id: current_user)
     @groups = Group.all
+    @total = @sales.total
   end
 
   def external
-    @sales = Sale.all.ordered_by_group.ordered_by_most_recent.where(user_id: current_user)
+    @sales = Sale.externals(current_user).ordered_by_most_recent
+    @total = @sales.total
   end
 
   # GET /sales/1 or /sales/1.json
@@ -17,7 +19,6 @@ class SalesController < ApplicationController
   # GET /sales/new
   def new
     @sale = Sale.new
-    # @sale.group_id = params[:group_id]
     @groups = Group.select_options
   end
 
