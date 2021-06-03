@@ -8,11 +8,6 @@ RSpec.describe Sale, type: :model do
     password_confirmation: 'password'
   )
 
-  group = Group.create(
-    name: 'newGroup',
-    user: current_user
-  )
-
   it 'has a ammount and its a number' do
     sale = Sale.create(
       user: current_user,
@@ -23,17 +18,32 @@ RSpec.describe Sale, type: :model do
     expect(sale).to_not be_valid
 
     sale.amount = 300
-    expect(group).to be_valid
+    expect(sale).to be_valid
   end
 
-  it 'can have a group' do
+  it 'has a title' do
     sale = Sale.create(
       user: current_user,
+      title: '',
+      description: 'some description',
+      amount: 300
+    )
+    expect(sale).to_not be_valid
+
+    sale.title = 'some title'
+    expect(sale).to be_valid
+  end
+
+  it 'has a user' do
+    sale = Sale.create(
+      user: nil,
       title: 'some title',
       description: 'some description',
-      amount: 300,
-      group_id: group.id
+      amount: 300
     )
+    expect(sale).to_not be_valid
+
+    sale.user = current_user
     expect(sale).to be_valid
   end
 end

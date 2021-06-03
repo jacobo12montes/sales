@@ -31,7 +31,7 @@ class SalesController < ApplicationController
   def create
     @groups = Group.select_options
     @sale = current_user.sales.new(sale_params)
-    
+
     respond_to do |format|
       if @sale.save
         @group = params[:sale][:group]
