@@ -9,7 +9,9 @@
 
 ## Live Demo
 
-
+![screenshot](./docs/Screenshot_1.png)
+![screenshot](./docs/Screenshot_2.png)
+![screenshot](./docs/Screenshot_3.png)
 
 
 ## Getting Started

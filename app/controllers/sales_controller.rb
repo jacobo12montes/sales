@@ -3,14 +3,20 @@ class SalesController < ApplicationController
 
   # GET /sales or /sales.json
   def index
-    @sales = Sale.ordered_by_most_recent.where(user_id: current_user)
+    @sales = current_user.sales.ordered_by_most_recent.includes(:groups)
     @groups = Group.all
-    @total = @sales.total
+    # @total = @sales.total
+    def image 
+      Sale.groups.first.icon
+    end 
   end
 
   def external
-    @sales = Sale.externals(current_user).ordered_by_most_recent
+    @sales = current_user.sales.externals.ordered_by_most_recent
     @total = @sales.total
+    def image 
+      Sale.groups.first.icon
+    end  
   end
 
   # GET /sales/1 or /sales/1.json
