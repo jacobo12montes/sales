@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Group, type: :model do
-
   include Rack::Test::Methods
   include ActionDispatch::TestProcess::FixtureFile
 
@@ -17,7 +16,6 @@ RSpec.describe Group, type: :model do
       name: '',
       user: current_user,
       icon: fixture_file_upload('spec/fixtures/profile-pic.png', 'image/png')
-
     )
     expect(group).to_not be_valid
 

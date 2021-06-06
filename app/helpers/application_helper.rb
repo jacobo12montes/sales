@@ -11,12 +11,12 @@ module ApplicationHelper
 
   def image_present(image)
     out = ''
-    out << (if !image.nil?
-              image_tag image.icon
+    out << (if image.nil?
+              image_tag('profile-pic.png', alt: 'profile-pic', class: 'profile-pic')
             else
-              image_tag("profile-pic.png", alt: "profile-pic", class: "profile-pic" )
+              image_tag image.icon
             end
-          ).to_s
-    out.html_safe      
+           ).to_s
+    out.html_safe
   end
 end
