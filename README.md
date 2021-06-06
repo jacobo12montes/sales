@@ -9,6 +9,14 @@
 
 ## Live Demo
 
+[Live Demo](https://salesforjuan.herokuapp.com/)
+
+## Video Demo
+
+[Video Demo](https://www.loom.com/share/ba17980a6cab489e9227fd1bde000ed6)
+
+## Screenshots
+
 ![screenshot](./docs/Screenshot_1.png)
 ![screenshot](./docs/Screenshot_2.png)
 ![screenshot](./docs/Screenshot_3.png)

@@ -13,10 +13,7 @@ class SalesController < ApplicationController
 
   def external
     @sales = current_user.sales.externals.ordered_by_most_recent
-    @total = @sales.total
-    def image 
-      Sale.groups.first.icon
-    end  
+    @total = @sales.total 
   end
 
   # GET /sales/1 or /sales/1.json
