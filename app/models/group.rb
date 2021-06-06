@@ -1,6 +1,8 @@
 class Group < ApplicationRecord
   has_one_attached :icon
 
+  validates :icon, presence: true
+
   belongs_to :user
 
   has_many :groupsales
