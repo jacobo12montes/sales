@@ -3,12 +3,14 @@ class SalesController < ApplicationController
 
   # GET /sales or /sales.json
   def index
-    @sales = Sale.all.ordered_by_most_recent.where(user_id: current_user)
+    @sales = current_user.sales.ordered_by_most_recent.includes(:groups)
     @groups = Group.all
+    # @total = @sales.total
   end
 
   def external
-    @sales = Sale.all.ordered_by_group.ordered_by_most_recent.where(user_id: current_user)
+    @sales = current_user.sales.externals.ordered_by_most_recent
+    @total = @sales.total
   end
 
   # GET /sales/1 or /sales/1.json
@@ -17,19 +19,27 @@ class SalesController < ApplicationController
   # GET /sales/new
   def new
     @sale = Sale.new
-    @sale.group_id = params[:group_id]
+    @groups = Group.select_options
   end
 
   # GET /sales/1/edit
-  def edit; end
+  def edit
+    @groups = Group.select_options
+  end
 
   # POST /sales or /sales.json
   def create
+    @groups = Group.select_options
     @sale = current_user.sales.new(sale_params)
-    @sale.group_id = params[:group_id]
 
     respond_to do |format|
       if @sale.save
+        @group = params[:sale][:group]
+        if @group != 0
+          @relation = Groupsale.new(group_id: @group, sale_id: @sale.id)
+          @relation.save
+        end
+
         format.html { redirect_to @sale, notice: 'Sale was successfully created.' }
         format.json { render :show, status: :created, location: @sale }
       else

@@ -9,15 +9,14 @@ module ApplicationHelper
     end
   end
 
-  def group_present(item)
-    item.group.name unless item.group_id.nil?
-  end
-
   def image_present(image)
-    image_tag image if image.present?
-  end
-
-  def user_sales(current_user, sale)
-    sale if current_user.id == sale.user_id
+    out = ''
+    out << (if image.nil?
+              image_tag('profile-pic.png', alt: 'profile-pic', class: 'profile-pic')
+            else
+              image_tag image.icon
+            end
+           ).to_s
+    out.html_safe
   end
 end

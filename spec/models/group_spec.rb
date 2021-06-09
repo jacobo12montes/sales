@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Group, type: :model do
+  include Rack::Test::Methods
+  include ActionDispatch::TestProcess::FixtureFile
+
   current_user = User.first_or_create!(
     name: 'dean',
     email: 'dean@example.com',
@@ -11,7 +14,8 @@ RSpec.describe Group, type: :model do
   it 'has a name' do
     group = Group.create(
       name: '',
-      user: current_user
+      user: current_user,
+      icon: fixture_file_upload('spec/fixtures/profile-pic.png', 'image/png')
     )
     expect(group).to_not be_valid
 
@@ -22,7 +26,8 @@ RSpec.describe Group, type: :model do
   it 'has a user' do
     group = Group.create(
       name: 'newGroup',
-      user: nil
+      user: nil,
+      icon: fixture_file_upload('spec/fixtures/profile-pic.png', 'image/png')
     )
     expect(group).to_not be_valid
 

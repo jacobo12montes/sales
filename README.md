@@ -9,7 +9,18 @@
 
 ## Live Demo
 
-https://ancient-inlet-43812.herokuapp.com/sales
+
+[Live Demo](https://salesforjuan.herokuapp.com/)
+
+## Video Demo
+
+[Video Demo](https://www.loom.com/share/9c1aca8a3e3d49f3af7e778ba9c87103)
+
+## Screenshots
+
+![screenshot](./docs/Screenshot_1.png)
+![screenshot](./docs/Screenshot_2.png)
+![screenshot](./docs/Screenshot_3.png)
 
 
 ## Getting Started
@@ -24,7 +35,7 @@ Postgres: >=9.5
 
 ### Setup
 
-Instal gems with:
+Install gems with:
 
 ```
 bundle install
@@ -60,7 +71,7 @@ Open `http://localhost:3000/` in your browser.
 ### Run tests
 
 ```
-    rpsec --format documentation
+    RSpec --format documentation
 ```
 
 ### Deployment
@@ -78,13 +89,13 @@ Heroku
 ## 🤝 Contributing
 
 
-Contributions, issues and feature requests are welcome!
+Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](issues/).
 
 ## Show your support
 
-Give a ⭐️ if you like this project!
+Give an ⭐️ if you like this project!
 
 ## Acknowledgments
 
@@ -92,7 +103,7 @@ The Creative Commons license of the design
 
 ## 📝 License
 
-You can access all the design info (color, typography, layouts) in this link:
+You can access all the design info (color, typography, layouts) at this link:
 
 [https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=)
 

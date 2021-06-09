@@ -4,15 +4,15 @@
 <div class='goals'>
   <div class='goalsitem1'>
     Total amount
-  </div> 
+  </div>
   <div class='goalsitem2'>
-     $<%= goals(@sales) %>
-  </div>  
+     $<%= @sales.total %>
+  </div>
 </div>
 <div class='sales'>
   <% @sales.each do |sale| %>
       <div class='sales-container'>
-        <div class='sales-item sales1' id="imageprofile"><%= image_present(sale.picture)  %></div>      
+        <div class='sales-item sales1' id="imageprofile"><%= image_present(sale.groups.first)  %></div>      
         <div class='sales-item sales2' >
           <%= link_to sale.title, sale %>
           <%= sale.date %>
